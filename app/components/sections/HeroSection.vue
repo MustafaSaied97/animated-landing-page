@@ -8,6 +8,12 @@
         </h2>
         <Button>Get Started</Button>
       </div>
+      <div class="flex flex-col gap-2">
+
+        <AnimatedDots/>
+        <AnimatedDots/>
+        <AnimatedDots/>
+      </div>
     </Container>
   </section>
 </template>
