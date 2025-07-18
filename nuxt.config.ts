@@ -11,14 +11,20 @@ export default defineNuxtConfig({
     //   });
     // },
     "@nuxtjs/tailwindcss",
+    'nuxt-svgo',
   ],
   tailwindcss: {
     cssPath: "~/assets/css/main.css",
     configPath: "~/tailwind.config.js",
   },
+   svgo: {
+    autoImportPath: "./assets/icons/", // Path to your SVG folder
+     componentPrefix: 'Svgo', // Matches our component name
+    dts: true ,// Enable TypeScript support
+  },
   //----------------------for auto imports----------------------
   imports: {
-    autoImport: false,
+    autoImport: true,
     // dirs: [
     //   // Only auto-import from these directories
     //   "composables",

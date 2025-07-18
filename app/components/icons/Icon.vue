@@ -1,10 +1,21 @@
 <template>
-  <div v-html="svg.default" :class="props.class" />
+  <component :is="icon" :class="props.class" :width="size" :height="size" aria-hidden="true" />
 </template>
 <script setup>
 const props = defineProps({
   name: { type: String, required: true },
-  class: { type: String, default: 'w-6 h-6' }
+  class: { type: String, default: '' },
+  size: { type: [String, Number], default: 24 }
 })
-const svg = await import(`~/assets/icons/${props.name}.svg?raw`)
+
+// Dynamically import the SVG component
+const icon = defineAsyncComponent(() => import(`~/assets/icons/${props.name}.svg`))
 </script>
+<style>
+.nuxt-icon {
+  width: auto !important;
+  height: auto !important;
+  margin-bottom: 0 !important;
+  vertical-align: baseline !important;
+}
+</style>

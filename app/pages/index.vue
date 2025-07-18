@@ -1,7 +1,6 @@
 <template>
   <div>
-    <Icon name="menu_mobile" class="text-red-500 w-3 mt-2" />
-
+    <Icon name="metro"   class="mt-2 w-3 text-red-500" />
     <HeroSection />
     <!-- <FeaturesSection /> -->
   </div>
