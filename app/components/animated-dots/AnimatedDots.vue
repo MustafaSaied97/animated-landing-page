@@ -1,5 +1,5 @@
 <template>
-  <div class="flex   items-center justify-center gap-[4.3px] overflow-hidden">
+  <div class="flex items-center justify-start gap-[4.3px] overflow-hidden">
     <template v-for="(node, index) in nodes" :key="index">
       <div v-if="node.isBefore" class="node node-2"></div>
 
@@ -7,8 +7,8 @@
         <div
           class="node transition-all duration-500 ease-in-out"
           :class="{
-            'node-1': activeNode === node.position,
-            'node-2': activeNode !== node.position
+            'node-2': activeNode === node.position,
+            'node-1': activeNode !== node.position
           }"
         ></div>
       </template>
@@ -19,17 +19,24 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+
+// Define props
+const props = defineProps({
+  delay: {
+    type: Number,
+    default: 0
+  }
+});
 
 // Animation control
 let animationInterval = null;
-const animatedRange = [5, 10];
-const isAnimating = ref(true);
-const activeNode = ref(animatedRange[0]);
+const animatedRange = [12, 12];
+ const activeNode = ref(animatedRange[0]);
 const direction = ref(1); // 1 = forward, -1 = reverse
-const speed = ref(120);
+const speed = ref(200);
 
-const totalLength = 20;
+const totalLength = 1000;
 const nodes = Array.from({ length: totalLength }, (_, i) => {
   const isBefore = i < animatedRange[0];
   const isAfter = i > animatedRange[1];
@@ -59,20 +66,21 @@ const startAnimation = () => {
   }, speed.value);
 };
 
-watch(speed, (newSpeed) => {
-  if (isAnimating.value) {
-    clearInterval(animationInterval);
+onMounted(() => {
+  // Start after specified delay
+  setTimeout(() => {
     startAnimation();
-  }
+  }, props.delay);
 });
 
-onMounted(startAnimation);
-onBeforeUnmount(() => clearInterval(animationInterval));
+onBeforeUnmount(() => {
+  clearInterval(animationInterval);
+});
 </script>
 
 <style scoped>
 .node {
-  @apply h-[7.85px] w-[8.04px] rounded-full bg-[#6F80F5] transition-all duration-500;
+  @apply h-[7.85px] w-[8.04px] shrink-0 rounded-full bg-[#6F80F5] transition-all duration-500;
 }
 .node-1 {
   @apply scale-50;

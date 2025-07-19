@@ -1,5 +1,4 @@
-@layer base {
-  :root {
+:root {
     /* Light Mode */
     --background: 255 255 255; /* white */
     --foreground: 17 24 39;    /* gray-900 */
@@ -23,4 +22,3 @@
     --primary: 99 102 241;     /* indigo-500 */
     --muted: 31 41 55;         /* gray-800 */
   }
-}

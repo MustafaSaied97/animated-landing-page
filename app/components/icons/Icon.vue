@@ -1,5 +1,5 @@
 <template>
-  <component :is="icon" :class="props.class" :width="size" :height="size" aria-hidden="true" />
+  <component :is="icon" :class="props.class" :width="size" :height="size" aria-hidden="true" v-bind="$attrs" />
 </template>
 <script setup>
 const props = defineProps({
@@ -12,10 +12,14 @@ const props = defineProps({
 const icon = defineAsyncComponent(() => import(`~/assets/icons/${props.name}.svg`))
 </script>
 <style>
-.nuxt-icon {
-  width: auto !important;
-  height: auto !important;
-  margin-bottom: 0 !important;
-  vertical-align: baseline !important;
+/* .nuxt-icon--fill, .nuxt-icon--fill * {
+    fill: currentColor;
 }
+
+.nuxt-icon {
+    height: inherit !important;
+    margin-bottom: 0 !important;
+    vertical-align:baseline !important;
+    width:inherit !important;
+} */
 </style>
