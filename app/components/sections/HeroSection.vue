@@ -100,9 +100,13 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      @media (min-width: 1280px) {
+
+      @media (min-width: 1333px) {
         margin-top: calc(272px - 150px);
         align-items: start;
+      }
+      @media (max-width: 1332.98px) and (min-width: 1280px) {
+        margin-top: 40px;
       }
       .header__text__title {
         color: #18264a;
