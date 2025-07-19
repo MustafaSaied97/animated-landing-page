@@ -1,4 +1,4 @@
-plugins/font-loader.client.js
+//plugins/font-loader.client.js
 export default defineNuxtPlugin({
   hooks: {
     'app:mounted'() {

@@ -27,43 +27,17 @@
         <h3 class="article-2__header__features">New Strategy. New Identity. New Website.</h3>
         <h3 class=" ">Soon</h3>
       </div>
-      <div class="box-2">
-        <div class="static-grid">
-          <AnimatedDots v-for="i in 13" :delay="0" />
-        </div>
-        <!-- <div class="lottie-container">
-          <LottieAnimation
-            :animation-data="saudiVisionAnimation"
-            :loop="true"
-            :autoplay="true"
-            width="1"
-            height="fit-content"
-            class="text-[#6F80F5]"
-            color="#00ff00"
-          />
-        </div> -->
-      </div>
+      <ClientOnly>
+        <AnimatedGridsSection />
+      </ClientOnly>
     </article>
   </section>
 </template>
 
-<script setup>
-import saudiVisionAnimation from '~/assets/Animation/saudi_vision_progressbar.json'
-// const animationData = ref(null) // Your animation JSON data
-
-// async function loadAnimation() {
-//   const response = await fetch('~/assets/Animation/saudi_vision_progressbar.json')
-//   animationData.value = await response.json()
-// }
-
-// loadAnimation()
-</script>
+<script setup></script>
 <style scoped>
-.lottie-container {
-  margin: 0 auto;
-  max-width: 600px;
-}
 .section {
+  color: #465ae5;
   display: flex;
   height: 100vh;
   flex-direction: column;
@@ -178,7 +152,6 @@ import saudiVisionAnimation from '~/assets/Animation/saudi_vision_progressbar.js
     margin-bottom: 64.55px;
   }
   .article-2__main-title {
-    color: #465ae5;
     font-family: '29LT Zarid Sans AL';
     font-size: 18px;
     font-style: normal;
@@ -200,7 +173,6 @@ import saudiVisionAnimation from '~/assets/Animation/saudi_vision_progressbar.js
       align-items: center;
     }
     h3 {
-      color: #465ae5;
       margin: 0;
       font-style: normal;
       font-size: 30px;
@@ -219,17 +191,6 @@ import saudiVisionAnimation from '~/assets/Animation/saudi_vision_progressbar.js
       @media (min-width: 1280px) {
         max-width: initial;
       }
-    }
-  }
-  .box-2 {
-    margin-top: 22.01px;
-    @media (min-width: 1280px) {
-      margin-top: 25.04px;
-    }
-    .static-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
     }
   }
 }
