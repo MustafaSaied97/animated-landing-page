@@ -14,7 +14,6 @@ const props = defineProps({
 
 onMounted(() => {
   console.error('full Server error:', props?.error || 'Unknown error')
-
   console.error('Server error:', props.error?.message || 'Unknown error')
   if (props.error?.stack) {
     console.error('Stack trace:', props.error.stack)

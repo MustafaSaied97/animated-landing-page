@@ -1,7 +1,7 @@
 <template>
-  <div class="min-h-screen flex flex-col">
+  <div class="default-layout">
     <AppHeader />
-    <main class="flex-grow">
+    <main class="main">
       <slot />
     </main>
     <AppFooter />
@@ -9,6 +9,16 @@
 </template>
 
 <script setup>
-import AppHeader from "~/components/layout/AppHeader.vue";
-import AppFooter from "~/components/layout/AppFooter.vue";
+import AppHeader from '~/components/layout/AppHeader.vue'
+import AppFooter from '~/components/layout/AppFooter.vue'
 </script>
+<style scoped>
+.default-layout {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  .main {
+    flex-grow: 1;
+  }
+}
+</style>

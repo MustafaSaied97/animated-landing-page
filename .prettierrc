@@ -2,7 +2,5 @@
   "semi": false,
   "singleQuote": true,
   "printWidth": 100,
-  "trailingComma": "none",
-  "plugins": ["prettier-plugin-tailwindcss"],
-  "tailwindConfig": "./tailwind.config.js"
-}
+  "trailingComma": "none"
+  }

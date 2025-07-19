@@ -1,51 +1,34 @@
 <template>
-  <section class="flex h-screen flex-col">
-    <article :class="['relative w-full pt-[59px]', 'xl:h-[661px] xl:pt-[150px]']">
-      <video autoplay muted loop id="myVideo" :class="['absolute top-0 -z-20 w-full']">
+  <section class="section">
+    <article class="article-1">
+      <video autoplay muted loop id="myVideo" class="article-1__video">
         <source src="~/assets/Animation/main_head.mp4" type="video/mp4" />
       </video>
-      <div
-        :class="[
-          'relative flex w-full flex-col flex-wrap items-center gap-[39px]',
-          '2xl:flex-row 2xl:flex-nowrap 2xl:items-start 2xl:gap-[338.1px] 2xl:ps-[157px]'
-        ]"
-      >
-        <div :class="['!h-[55px] !w-[106px]', 'xl:!h-[209px] xl:!w-[400.09px]']">
-          <ASCLogoMainIcon class="h-full w-full" />
+      <div class="article-1__header">
+        <div class="header__icon">
+          <ASCLogoMainIcon />
         </div>
 
-        <h2
-          :class="[
-            'mt-[39px] w-full max-w-[763px] text-center text-[30px] font-[400] leading-[105%] tracking-[0.3px] text-[#18264A]',
-            'xl:mt-[calc(272px-150px)] xl:whitespace-nowrap xl:text-start xl:text-[52px] xl:font-[300] xl:leading-[95%] xl:tracking-[1%]'
-          ]"
-        >
-          <span
-            :class="[
-              'text-[30px] font-[400] leading-[105%] tracking-[0.3px] text-[#18264A]',
-              'xl:text-[52px] xl:font-[300] xl:leading-[95%] xl:tracking-[1%]'
-            ]"
-          >
+        <h2 class="header__text">
+          <span class="header__text__title header__text__title--normal">
             Arabian for Science and Technology Co.
           </span>
 
           <br />
-          <span class="mt-4 block font-[500]"> Innovate Local. Impact Global. </span>
+          <span class="header__text__title header__text__title--bold">
+            Innovate Local. Impact Global.
+          </span>
         </h2>
       </div>
     </article>
-    <article class="me-[69px] ms-[66px]">
-      <h2 class="text-[24px] font-semibold leading-[25px] tracking-[1%] text-[#465AE5]">
-        Now Introducing
-      </h2>
-      <div
-        class="mt-2 flex items-center justify-between py-1.5 text-[52px] font-[300] leading-[49px] tracking-[1%] text-[#465AE5]"
-      >
-        <h3 class=" ">New Strategy. New Identity. New Website.</h3>
+    <article class="article-2">
+      <h2 class="article-2__main-title">Now Introducing</h2>
+      <div class="article-2__header">
+        <h3 class="article-2__header__features">New Strategy. New Identity. New Website.</h3>
         <h3 class=" ">Soon</h3>
       </div>
-      <div class="mt-4 py-1">
-        <div class="flex flex-col gap-[9px]">
+      <div class="box-2">
+        <div class="static-grid">
           <AnimatedDots v-for="i in 13" :delay="0" />
         </div>
         <!-- <div class="lottie-container">
@@ -65,21 +48,189 @@
 </template>
 
 <script setup>
-import Container from '~/components/layout/Container.vue'
-import ASCLogoMain from '~/assets/Icons/ASC_Logo_Main.svg'
 import saudiVisionAnimation from '~/assets/Animation/saudi_vision_progressbar.json'
-const animationData = ref(null) // Your animation JSON data
+// const animationData = ref(null) // Your animation JSON data
 
-async function loadAnimation() {
-  const response = await fetch('~/assets/Animation/saudi_vision_progressbar.json')
-  animationData.value = await response.json()
-}
+// async function loadAnimation() {
+//   const response = await fetch('~/assets/Animation/saudi_vision_progressbar.json')
+//   animationData.value = await response.json()
+// }
 
-loadAnimation()
+// loadAnimation()
 </script>
 <style scoped>
 .lottie-container {
   margin: 0 auto;
   max-width: 600px;
+}
+.section {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  gap: 96px;
+  justify-content: space-between;
+  overflow-x: hidden;
+  @media (min-width: 1280px) {
+    gap: 0px;
+  }
+}
+.article-1 {
+  position: relative;
+  width: 100%;
+  padding-top: 59px;
+  @media (min-width: 1280px) {
+    height: 661px;
+    padding-top: 150px;
+  }
+  .article-1__video {
+    position: absolute;
+    top: 0px;
+    z-index: -20;
+    width: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media (min-width: 1280px) {
+      width: 100%;
+    }
+  }
+  .article-1__header {
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 39px;
+    @media (min-width: 1536px) {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      gap: 338.1px;
+      padding-inline-start: 157px;
+    }
+    .header__icon {
+      height: 55px !important;
+      width: 106px !important;
+      @media (min-width: 1280px) {
+        height: 209px !important;
+        width: 400.09px !important;
+      }
+      svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .header__text {
+      margin-top: 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @media (min-width: 1280px) {
+        margin-top: calc(272px - 150px);
+        align-items: start;
+      }
+      .header__text__title {
+        color: #18264a;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 105%;
+        letter-spacing: 0.3px;
+        text-align: center;
+        display: inline-block;
+        @media (min-width: 1280px) {
+          font-size: 52px;
+          font-weight: 300;
+          line-height: 95%;
+          letter-spacing: 0.52px;
+          text-align: start;
+        }
+      }
+      .header__text__title--normal {
+        width: 300px;
+        font-weight: 400;
+
+        @media (min-width: 1280px) {
+          font-weight: 300;
+          width: auto;
+        }
+      }
+      .header__text__title--bold {
+        font-weight: 600;
+        width: 200px;
+        @media (min-width: 1280px) {
+          font-weight: 500;
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+.article-2 {
+  margin-inline-end: 19px;
+  margin-inline-start: 18px;
+  margin-bottom: 47.52px;
+  @media (min-width: 1280px) {
+    margin-inline-end: 69px;
+    margin-inline-start: 66px;
+    margin-bottom: 64.55px;
+  }
+  .article-2__main-title {
+    color: #465ae5;
+    font-family: '29LT Zarid Sans AL';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 105%;
+    letter-spacing: 0.18px;
+    @media (min-width: 1280px) {
+      font-size: 24px;
+      letter-spacing: 0.24px;
+    }
+  }
+  .article-2__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 5px;
+    @media (min-width: 1280px) {
+      margin-top: 8px;
+      align-items: center;
+    }
+    h3 {
+      color: #465ae5;
+      margin: 0;
+      font-style: normal;
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 105%; /* 31.5px */
+      letter-spacing: 0.3px;
+      @media (min-width: 1280px) {
+        font-size: 52px;
+        font-weight: 300;
+        line-height: 95%;
+        letter-spacing: 0.52px;
+      }
+    }
+    .article-2__header__features {
+      max-width: 150px;
+      @media (min-width: 1280px) {
+        max-width: initial;
+      }
+    }
+  }
+  .box-2 {
+    margin-top: 22.01px;
+    @media (min-width: 1280px) {
+      margin-top: 25.04px;
+    }
+    .static-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+  }
 }
 </style>

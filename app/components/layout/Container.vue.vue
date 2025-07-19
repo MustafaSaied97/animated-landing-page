@@ -1,5 +1,14 @@
 <template>
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+  <div class="custom-container">
     <slot />
   </div>
 </template>
+<style scoped>
+.custom-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+</style>

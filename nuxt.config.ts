@@ -18,13 +18,12 @@ export default defineNuxtConfig({
     //     config.plugins.push(vuetify({ autoImport: true }));
     //   });
     // },
-    "@nuxtjs/tailwindcss",
-    'nuxt-svgo',
+     'nuxt-svgo',
   ],
-  tailwindcss: {
-    cssPath: "~/assets/css/main.css",
-    configPath: "~/tailwind.config.js",
-  },
+ 
+  css: [
+    '~/assets/css/main.css'
+  ],
    svgo: {
     autoImportPath: "./assets/icons/", // Path to your SVG folder
      componentPrefix: 'Svgo', // Matches our component name
