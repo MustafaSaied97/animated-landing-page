@@ -174,7 +174,7 @@
     margin-bottom: 0px;
   }
   @media (min-width: 1600px) {
-    margin-bottom: 64.55px;
+    margin-bottom: 69.07px;
   }
   .article-2__main-title {
     font-family: '29LT Zarid Sans AL';
