@@ -2,7 +2,11 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-
+  runtimeConfig: {
+    public: {
+      siteUrl: '' // Will be auto-detected if empty
+    }
+  },
   //----------------------for auto modules----------------------
   modules: [
     // async (_options, nuxt) => {
@@ -11,7 +15,7 @@ export default defineNuxtConfig({
     //     config.plugins.push(vuetify({ autoImport: true }));
     //   });
     // },
-   ],
+  ],
 
   css: ['~/assets/css/main.css'],
   //----------------------for auto imports----------------------

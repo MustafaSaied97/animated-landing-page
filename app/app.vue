@@ -4,13 +4,15 @@
   </div>
 </template>
 <script setup>
+const config = useRuntimeConfig()
+const baseUrl = config.public.siteUrl || 'https://astc.com.sa/astc/'
 const staticMetaData = {
   title: 'ASTC',
   description:
     'ASTC has been a trusted contractor in Saudi Arabia since 2007, delivering expert-level Project Management, Telecom Engineering, and IT services.',
   type: 'website',
-  image: '/favicon.ico', 
-  url: 'https://astc.com.sa/astc/',  
+  image: `${baseUrl}/favicon.ico`,
+  url: `${baseUrl}/astc/`,
   keywords:
     'ASTC, Arabian for Science and Technology Co., Saudi contractor, project management, telecom, IT services',
   author: 'ASTC Team'
