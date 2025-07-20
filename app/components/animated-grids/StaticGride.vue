@@ -26,7 +26,7 @@ const props = defineProps({
   },
   smallDotPosition: {
     type: Number,
-    default: 12
+    default: 15
   }
 })
 

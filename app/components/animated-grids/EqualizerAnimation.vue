@@ -21,7 +21,7 @@ const config = {
   rows: 14,
   cols: 14,
   minActive: 1,
-  maxActive: 8,
+  maxActive: 5,
   fillSpeed: 100,
   clearSpeed: 80,
   pauseAfterFill: 300,
