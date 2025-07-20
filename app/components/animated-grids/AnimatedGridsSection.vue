@@ -18,14 +18,14 @@ const animatedRange = computed(() => (breakpoint.value == '2xl' ? [12, 12] : [0,
 #AnimatedGridsSection {
   --grid-width: 8px;
   --grid-height: 8px;
-  --grid-h-gap: 8px;
-  --grid-v-gap: 6px;
+  --grid-h-gap: 4.1875px;
+  --grid-v-gap: 4.88px;
   --grid-color: #6f80f5;
   @media (min-width: 1280px) {
-    --grid-width: 8px;
-    --grid-height: 8px;
-    --grid-h-gap: 4.3px;
-    --grid-v-gap: 6px;
+    --grid-width: 7.854px;
+    --grid-height: 7.854px;
+    --grid-h-gap: 3.39px;
+    --grid-v-gap: 5.15px;
   }
 
   margin-top: 22.01px;

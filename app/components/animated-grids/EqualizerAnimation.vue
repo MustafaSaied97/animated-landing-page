@@ -21,7 +21,7 @@ const config = {
   rows: 14,
   cols: 14,
   minActive: 1,
-  maxActive: 5,
+  maxActive: 8,
   fillSpeed: 100,
   clearSpeed: 80,
   pauseAfterFill: 300,
@@ -143,8 +143,8 @@ onMounted(() => {
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
+ height: var(--grid-height);
+  width: var(--grid-width);
   border-radius: 50%;
   background-color: transparent;
   transition: background-color 0.1s linear;
