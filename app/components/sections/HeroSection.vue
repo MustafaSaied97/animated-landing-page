@@ -77,12 +77,18 @@
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: start;
     gap: 39px;
-    @media (min-width: 1536px) {
+    @media (min-width: 1440px) {
       flex-direction: row;
       flex-wrap: nowrap;
       align-items: flex-start;
       gap: 338.1px;
+      justify-content: center;
+      padding-inline-start: 0px;
+    }
+    @media (min-width: 1600px) {
+      justify-content: start;
       padding-inline-start: 157px;
     }
     .header__icon {
