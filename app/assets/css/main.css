@@ -6,4 +6,4 @@
 @import './config/_sizes.css';
 @import './config/_breakpoints.css';
 
-/* @import './utilities/_mixins.css'; */
+@import './utilities/_mixins.css';

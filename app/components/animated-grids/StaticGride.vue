@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="StaticGride-container">
     <template v-for="(node, index) in nodes" :key="index">
       <div v-if="node.isBig" class="node node-2"></div>
 
@@ -47,7 +47,7 @@ const nodes = computed(() =>
 </script>
 
 <style scoped>
-.container {
+.StaticGride-container {
   display: flex;
   align-items: center;
   justify-content: flex-start;

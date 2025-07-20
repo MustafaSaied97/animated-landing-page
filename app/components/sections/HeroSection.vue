@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <section class="container section">
     <article class="article-1">
       <video autoplay muted loop id="myVideo" class="article-1__video">
         <source src="~/assets/Animation/main_head.mp4" type="video/mp4" />
@@ -96,12 +96,16 @@
     @media (min-width: 1600px) {
       gap: 338.1px;
       justify-content: start;
-      padding-inline-start: 157px;
+      padding-inline-start: 93px;
     }
     .header__icon {
       height: 55px !important;
       width: 106px !important;
       @media (min-width: 1280px) {
+        height: 150px !important;
+        width: 300px !important;
+      }
+      @media (min-width: 1600px) {
         height: 209px !important;
         width: 400.09px !important;
       }
@@ -168,13 +172,9 @@
 }
 
 .article-2 {
-  margin-inline-end: 19px;
-  margin-inline-start: 18px;
   margin-bottom: 47.52px;
   margin-top: 96px;
   @media (min-width: 1280px) {
-    margin-inline-end: 65px;
-    margin-inline-start: 64px;
     margin-bottom: 10px;
     margin-top: 20px;
   }
