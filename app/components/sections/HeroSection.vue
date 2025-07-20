@@ -47,7 +47,7 @@
   @media (min-width: 390px) {
     justify-content: space-between;
   }
-  @media (min-width: 1600px) {
+  @media (min-width: 1880px) {
     justify-content: start;
   }
 }
@@ -59,7 +59,7 @@
     height: fit-content;
     padding-top: 20px;
   }
-  @media (min-width: 1600px) {
+  @media (min-width: 1880px) {
     height: 661px;
     padding-top: 150px;
   }
@@ -89,11 +89,12 @@
       flex-direction: row;
       flex-wrap: nowrap;
       align-items: flex-start;
-      gap: 338.1px;
+      gap: 100px;
       justify-content: center;
       padding-inline-start: 0px;
     }
     @media (min-width: 1600px) {
+      gap: 338.1px;
       justify-content: start;
       padding-inline-start: 157px;
     }
@@ -117,7 +118,7 @@
       gap: 18px;
 
       @media (min-width: 1280px) {
-        margin-top: 40px;
+        margin-top: 60px;
         gap: 0px;
       }
       @media (min-width: 1333px) {
