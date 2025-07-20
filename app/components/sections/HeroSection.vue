@@ -38,12 +38,15 @@
 .section {
   color: #465ae5;
   display: flex;
-  height: 100vh;
+  height: 100svh;
   flex-direction: column;
   gap: 96px;
   justify-content: space-between;
   overflow-x: hidden;
   @media (min-width: 1280px) {
+    gap: 20px;
+  }
+  @media (min-width: 1600px) {
     gap: 0px;
   }
 }
@@ -52,10 +55,11 @@
   width: 100%;
   padding-top: 59px;
   @media (min-width: 1280px) {
-    height: 661px;
-    padding-top: 100px;
+    height: fit-content;
+    padding-top: 20px;
   }
   @media (min-width: 1600px) {
+    height: 661px;
     padding-top: 150px;
   }
   .article-1__video {
@@ -167,6 +171,9 @@
   @media (min-width: 1280px) {
     margin-inline-end: 65px;
     margin-inline-start: 64px;
+    margin-bottom: 0px;
+  }
+  @media (min-width: 1600px) {
     margin-bottom: 64.55px;
   }
   .article-2__main-title {
