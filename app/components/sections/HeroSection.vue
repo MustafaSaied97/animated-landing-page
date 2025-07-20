@@ -41,6 +41,7 @@
   height: 100svh;
   flex-direction: column;
   gap: 96px;
+  overflow-y: auto;
   justify-content: space-between;
   overflow-x: hidden;
   @media (min-width: 1280px) {
@@ -67,6 +68,7 @@
     top: 0px;
     z-index: -20;
     width: 150%;
+    max-height: 100vh;
     left: 50%;
     transform: translateX(-50%);
 
@@ -171,7 +173,7 @@
   @media (min-width: 1280px) {
     margin-inline-end: 65px;
     margin-inline-start: 64px;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
   }
   @media (min-width: 1600px) {
     margin-bottom: 69.07px;
