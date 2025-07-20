@@ -40,21 +40,21 @@
   display: flex;
   height: 100svh;
   flex-direction: column;
-  gap: 96px;
   overflow-y: auto;
-  justify-content: space-between;
+  justify-content: start;
   overflow-x: hidden;
-  @media (min-width: 1280px) {
-    gap: 20px;
+  gap: 0px;
+  @media (min-width: 412px) {
+    justify-content: space-between;
   }
   @media (min-width: 1600px) {
-    gap: 0px;
+    justify-content: start;
   }
 }
 .article-1 {
   position: relative;
   width: 100%;
-  padding-top: 59px;
+  padding-top: 58px;
   @media (min-width: 1280px) {
     height: fit-content;
     padding-top: 20px;
@@ -170,13 +170,16 @@
   margin-inline-end: 19px;
   margin-inline-start: 18px;
   margin-bottom: 47.52px;
+  margin-top: 96px;
   @media (min-width: 1280px) {
     margin-inline-end: 65px;
     margin-inline-start: 64px;
     margin-bottom: 10px;
+    margin-top: 20px;
   }
   @media (min-width: 1600px) {
     margin-bottom: 69.07px;
+    margin-top: 0px;
   }
   .article-2__main-title {
     font-family: '29LT Zarid Sans AL';
