@@ -14,7 +14,6 @@
             Arabian for Science and Technology Co.
           </span>
 
-          <br />
           <span class="header__text__title header__text__title--bold">
             Innovate Local. Impact Global.
           </span>
@@ -103,8 +102,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 18px;
+
       @media (min-width: 1280px) {
         margin-top: 40px;
+        gap: 0px;
       }
       @media (min-width: 1333px) {
         margin-top: calc(272px - 150px);
