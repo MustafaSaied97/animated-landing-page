@@ -1,9 +1,0 @@
-@import './base/_reset.css';
-@import './base/_typography.css';
-@import './base/_root.css';
-
-@import './config/_colors.css';
-@import './config/_sizes.css';
-@import './config/_breakpoints.css';
-
-/* @import './utilities/_mixins.css'; */
