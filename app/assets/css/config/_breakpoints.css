@@ -1,16 +1,7 @@
-@layer utilities {
-  @variants responsive {
-    /* Custom breakpoints */
-    .xs-only {
-      @media (max-width: 639px) {
-        @apply block;
-      }
-    }
-    
-    .md-up {
-      @media (min-width: 768px) {
-        @apply block;
-      }
-    }
-  }
+:root {
+  --breakpoint-xs: 415px;
+  --breakpoint-sm: 834px;
+  --breakpoint-md: 1200px;
+  --breakpoint-lg: 1440px;
+  --breakpoint-xl: 1920px;
 }
