@@ -11,15 +11,9 @@ export default defineNuxtConfig({
     //     config.plugins.push(vuetify({ autoImport: true }));
     //   });
     // },
-    'nuxt-svgo'
-  ],
+   ],
 
   css: ['~/assets/css/main.css'],
-  svgo: {
-    autoImportPath: './assets/icons/', // Path to your SVG folder
-    componentPrefix: 'Svgo', // Matches our component name
-    dts: true // Enable TypeScript support
-  },
   //----------------------for auto imports----------------------
   imports: {
     autoImport: true
