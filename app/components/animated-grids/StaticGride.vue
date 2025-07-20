@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <template v-for="(node, index) in nodes" :key="index">
-      <div v-if="node.isBefore" class="node node-2"></div>
+      <div v-if="node.isBig" class="node node-2"></div>
 
       <template v-if="node.isAnimated">
         <div
@@ -13,72 +13,37 @@
         ></div>
       </template>
 
-      <div v-if="node.isAfter" class="node node-1"></div>
+      <div v-if="node.isSmall" class="node node-1"></div>
     </template>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-// Define props
 const props = defineProps({
   delay: {
     type: Number,
     default: 0
   },
-  animatedRange: {
-    type: Array,
-    default: [12, 12]
+  smallDotPosition: {
+    type: Number,
+    default: 12
   }
 })
 
-let animationInterval = null
-
-const activeNode = ref(props.animatedRange[0])
-const direction = ref(1) // 1 = forward, -1 = reverse
-const speed = ref(200)
+const activeNode = ref(props.smallDotPosition[0])
 
 const totalLength = 1000
 const nodes = computed(() =>
   Array.from({ length: totalLength }, (_, i) => {
-    const isBefore = i < props.animatedRange[0]
-    const isAfter = i > props.animatedRange[1]
-    const isAnimated = !isBefore && !isAfter
+    const isBig = i < props.smallDotPosition
+    const isSmall = i > props.smallDotPosition
     return {
       position: i,
-      isBefore,
-      isAfter,
-      isAnimated,
-      isLastAnimated: i === props.animatedRange[1]
+      isBig,
+      isSmall
     }
   })
 )
-
-const startAnimation = () => {
-  if (animationInterval) clearInterval(animationInterval)
-  animationInterval = setInterval(() => {
-    // Move to next node in current direction
-    activeNode.value += direction.value
-
-    // Reverse direction at boundaries
-    if (activeNode.value === props.animatedRange[1] && direction.value === 1) {
-      direction.value = -1 // Start reversing after last node
-    } else if (activeNode.value === props.animatedRange[0] && direction.value === -1) {
-      direction.value = 1 // Start forward after first node
-    }
-  }, speed.value)
-}
-
-onMounted(() => {
-  // Start after specified delay
-  setTimeout(() => {
-    startAnimation()
-  }, props.delay)
-})
-
-onBeforeUnmount(() => {
-  clearInterval(animationInterval)
-})
 </script>
 
 <style scoped>

@@ -151,8 +151,8 @@
   margin-inline-start: 18px;
   margin-bottom: 47.52px;
   @media (min-width: 1280px) {
-    margin-inline-end: 69px;
-    margin-inline-start: 66px;
+    margin-inline-end: 65px;
+    margin-inline-start: 64px;
     margin-bottom: 64.55px;
   }
   .article-2__main-title {

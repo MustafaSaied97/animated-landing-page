@@ -1,7 +1,7 @@
 <template>
   <div id="AnimatedGridsSection" class="">
     <div class="static-grid">
-      <StaticGride v-for="i in 14" :delay="0" :animatedRange="animatedRange" />
+      <StaticGride v-for="i in 14" :delay="0" :smallDotPosition="smallDotPosition" />
     </div>
     <div class="animated-grid">
       <EqualizerAnimation />
@@ -11,7 +11,7 @@
 
 <script setup>
 const breakpoint = useBreakpoints()
-const animatedRange = computed(() => (breakpoint.value == '2xl' ? [12, 12] : [0, 0]))
+const smallDotPosition = computed(() => (breakpoint.value == '2xl' ? 12 : 0))
 </script>
 
 <style scoped>
@@ -21,16 +21,24 @@ const animatedRange = computed(() => (breakpoint.value == '2xl' ? [12, 12] : [0,
   --grid-h-gap: 4.1875px;
   --grid-v-gap: 4.88px;
   --grid-color: #6f80f5;
+  --grid-contianer-padding-end: 5px;
+  --grid-contianer-padding-start: 3.88px;
   @media (min-width: 1280px) {
     --grid-width: 7.854px;
     --grid-height: 7.854px;
     --grid-h-gap: 3.39px;
     --grid-v-gap: 5.15px;
+    --grid-contianer-padding-end: 3.72px;
+    --grid-contianer-padding-start: 2.76px;
   }
 
   margin-top: 22.01px;
+  padding-inline-end: 5px;
+  padding-inline-start: 3.88px;
   @media (min-width: 1280px) {
     margin-top: 25.04px;
+    padding-inline-end: 3.72px;
+    padding-inline-start: 2.76px;
   }
   /* padding: 4px; */
   position: relative;
@@ -43,10 +51,12 @@ const animatedRange = computed(() => (breakpoint.value == '2xl' ? [12, 12] : [0,
     top: 0px;
     position: absolute;
     margin: 0 auto;
-    inset-inline-start: 0;
+    inset-inline-start: calc(0 + var(--grid-contianer-padding-start));
 
     @media (min-width: 1280px) {
-      inset-inline-start: calc(12 * (var(--grid-width) + var(--grid-h-gap)));
+      inset-inline-start: calc(
+        (12 * (var(--grid-width) + var(--grid-h-gap))) + var(--grid-contianer-padding-start)
+      );
     }
   }
 }
