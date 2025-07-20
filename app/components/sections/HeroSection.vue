@@ -44,7 +44,7 @@
   justify-content: start;
   overflow-x: hidden;
   gap: 0px;
-  @media (min-width: 412px) {
+  @media (min-width: 390px) {
     justify-content: space-between;
   }
   @media (min-width: 1600px) {
