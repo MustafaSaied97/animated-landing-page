@@ -79,7 +79,7 @@
     align-items: center;
     justify-content: start;
     gap: 39px;
-    @media (min-width: 1440px) {
+    @media (min-width: 1280px) {
       flex-direction: row;
       flex-wrap: nowrap;
       align-items: flex-start;
