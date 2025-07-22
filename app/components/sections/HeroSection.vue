@@ -44,7 +44,7 @@
   justify-content: space-between;
   overflow-x: hidden;
   gap: 0px;
-  
+
   @media (min-width: 1280px) {
     gap: 50px;
   }
@@ -103,6 +103,7 @@
     .header__icon {
       height: 55px !important;
       width: 106px !important;
+       margin-bottom: 0px;
       @media (min-width: 1280px) {
         height: 150px !important;
         width: 300px !important;
@@ -110,6 +111,7 @@
       @media (min-width: 1600px) {
         height: 209px !important;
         width: 400.09px !important;
+        margin-bottom: 12px;
       }
       svg {
         height: 100%;
@@ -124,11 +126,10 @@
       gap: 18px;
 
       @media (min-width: 1280px) {
-        margin-top: 60px;
+        align-self: flex-end;
         gap: 0px;
       }
       @media (min-width: 1600px) {
-        margin-top: calc(272px - 150px);
         align-items: start;
       }
 
