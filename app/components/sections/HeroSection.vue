@@ -41,14 +41,16 @@
   height: 100svh;
   flex-direction: column;
   overflow-y: auto;
-  justify-content: start;
+  justify-content: space-between;
   overflow-x: hidden;
   gap: 0px;
-  @media (min-width: 390px) {
-    justify-content: space-between;
+  
+  @media (min-width: 1280px) {
+    gap: 50px;
   }
   @media (min-width: 1880px) {
     justify-content: start;
+    gap: 0px;
   }
 }
 .article-1 {
@@ -57,7 +59,7 @@
   padding-top: 58px;
   @media (min-width: 1280px) {
     height: fit-content;
-    padding-top: 20px;
+    padding-top: 58px;
   }
   @media (min-width: 1880px) {
     height: 661px;
@@ -125,7 +127,7 @@
         margin-top: 60px;
         gap: 0px;
       }
-      @media (min-width: 1333px) {
+      @media (min-width: 1600px) {
         margin-top: calc(272px - 150px);
         align-items: start;
       }
